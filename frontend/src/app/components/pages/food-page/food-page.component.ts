@@ -19,13 +19,14 @@ export class FoodPageComponent implements OnInit {
     private router: Router
   ) {
     route.params.subscribe((params) => {
-      if (params.id) this.food = this.foodSrv.getFoodById(params.id);
+      if (params.id)
+        this.foodSrv.getFoodById(params.id).subscribe((data) => {
+          this.food = data;
+        });
     });
   }
 
-  ngOnInit(): void {
-    console.log(this.food);
-  }
+  ngOnInit(): void {}
 
   addToCart() {
     this.cartSrv.addToCart(this.food);
