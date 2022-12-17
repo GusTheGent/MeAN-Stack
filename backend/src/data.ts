@@ -77,3 +77,20 @@ export const sample_tags: any[] = [
   { name: "Fry", count: 1 },
   { name: "Soup", count: 1 },
 ];
+
+export const sample_users: any[] = [
+  {
+    name: "Lionel Messi",
+    email: "messi@psg.fr",
+    password: "qwerty",
+    address: "Paris de la port",
+    isAdmin: true,
+  },
+  {
+    name: "Cristiano Ronaldo",
+    email: "ronaldo@mu.uk",
+    password: "qwertyporto",
+    address: "Manchester de la port",
+    isAdmin: false,
+  },
+];
