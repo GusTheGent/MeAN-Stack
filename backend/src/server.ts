@@ -53,11 +53,11 @@ app.get("/api/foods/:foodID", (req, res) => {
 });
 
 // LOGIN
-app.post("api/users/login", (req, res) => {
+app.post("/api/users/login", (req, res) => {
   const { email, password } = req.body;
-  const user = sample_users.find((user) => {
-    user.email === email && user.password === password;
-  });
+  const user = sample_users.find(
+    (user) => user.email === email && user.password === password
+  );
   if (user) {
     res.send(generateToken(user));
   } else {
@@ -73,7 +73,7 @@ const generateToken = (user: any) => {
     },
     "PrivateKey",
     {
-      expiresIn: "1h",
+      expiresIn: "30d",
     }
   );
 
